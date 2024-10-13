@@ -91,7 +91,7 @@ const Chatbot = () => {
                 <span className="brand text-white text-4xl">Navi-Gree</span>
               </div>
               <div className="flex justify-center items-center border-b border-slate-700">
-                <button className="midBtn text-black bg-purple-600 hover:bg-purple-800 rounded-lg p-4 mb-8">
+                <button className="midBtn text-white bg-[#a64d79] hover:bg-[#a64d79] opacity-80 rounded-lg p-4 mb-8">
                   <img src="" alt="" className="addBtn" />+ New Chat
                 </button>
               </div>

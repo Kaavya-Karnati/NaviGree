@@ -4,7 +4,6 @@ import Home from './Components/Home';
 import NavigationBar from './Components/NavigationBar';
 import About from './Components/About';
 import Chatbot from './Components/Chatbot';
-import DialogflowMessenger from './Components/DialogFlowMessenger';
 
 function App() {
   return (
@@ -12,7 +11,6 @@ function App() {
       <NavigationBar />
       <div class="container">
       <Home />
-      <DialogflowMessenger />
       <About />
       <Chatbot />
       </div>
