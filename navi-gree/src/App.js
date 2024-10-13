@@ -7,9 +7,13 @@ function App() {
   return (
     <Router>
       <NavigationBar />
-      <Routes>
+      <div class="container">
+      <Home />
+      </div>
+      
+      {/* <Routes>
         <Route path="/" element={<Home />} />
-      </Routes>
+      </Routes> */}
     </Router>
   );
 }

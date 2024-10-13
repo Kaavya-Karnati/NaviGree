@@ -27,7 +27,7 @@ const navlinks = [
 const NavigationBar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   return (
-    <nav className="fixed top-0 left-0 right-0 z-10 border border-[#33353F] bg-[#121212] bg-opacity-100">
+    <nav className="fixed top-0 left-0 right-0 z-10 border border-[#33353F] bg-[#121212] bg-opacity-80">
       <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto pt-4 px-5">
         <Link
           to="/"
