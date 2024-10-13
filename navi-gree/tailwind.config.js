@@ -2,7 +2,9 @@
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      minHeight: {'chat-min': 'calc(100vh - 14rem)'}
+    },
   },
   plugins: [],
 }
