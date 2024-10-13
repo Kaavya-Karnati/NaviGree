@@ -36,3 +36,112 @@
     transform: rotate(360deg);
   }
 }
+
+.section-whit {
+  background-color: #fff;
+  padding: 70px 0;
+}
+.team-item{
+  background-color: white;
+  text-align: center;
+  margin: 20px 0;
+  padding: 50px 20px 40px 20px;
+  border-radius: 8px 8px;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -ms-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+.team-item:hover{
+  background-color: #4766e4;
+  color: white;
+}
+.team-item h3{
+  margin: 20px 0 1px 0 !important;
+  color: #454545;
+  font-size: 18;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.25s ease-in-out;
+
+}
+.section-transition{
+  white-space: pre-line;
+}
+.team-item:hover h3{
+  color: #ddd;
+}
+.team-info{
+  display: block;
+  margin-bottom: 0;
+}
+.team-info p{
+  margin: #acacac;
+  font-style: italic;
+}
+.team-info::after{
+  background: #008aff;
+  background: -webkit-linear-gradient(
+    135deg, #6B02FF 0%, #985BEF 100%
+    );
+  background: -moz-linear-gradiant(
+    135deg, #6B02FF 0%, #985BEF 100%
+    );
+  background: -moz-linear-gradiant(
+    135deg, #6B02FF 0%, #985BEF 100%
+    );
+  background: linear-gradiant(
+    135deg, #6B02FF 0%, #985BEF 100%
+    );
+    display: inline-block;
+    vertical-align: middle;
+    content: '';
+    width: 50px;
+    height: 3px;
+    margin-top: -20px;
+}
+.team-img{
+  max-width: 140px;
+  padding: 6px;
+  background-color: #dedede;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+u1.team-icon{
+  margin: 25px;
+}
+u1-team-icon li{
+  display: inline-block;
+  margin: 0 3px;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  -ms-transition: all 0.25s ease-in-out;
+  transition: all 25s ease-in-out;
+}
+
+u1.team-icon li a{
+  margin: 0;
+  display: inline-block;
+  padding: 8px 8px;
+  width: 34px;
+  height: 34px;
+  font-size: 18px;
+  line-height: 18px;
+  background-color: #fff;
+}
+u1.team-icon li a:hover{
+  background-color: #4766e4;
+  color: white;
+}
+.team-item:hover{
+  background: #3956de;
+  color: white;
+}
+.team-img img{
+  width: 500px;   /* Set the desired width */
+  height: 500px;   /* Maintain aspect ratio */
+  border-radius: 20px;  /* Optional: make corners rounded */
+}
