@@ -27,14 +27,17 @@ const navlinks = [
 const NavigationBar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   return (
-    <nav className="fixed top-0 left-0 right-0 z-10 border border-[#33353F] bg-[#121212] bg-opacity-80">
-      <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto pt-4 px-5">
+    <nav className="fixed top-0 left-0 right-0 z-10 border border-[#33353F] bg-purple-800 bg-opacity-80">
+      <div className="flex container lg:py-1 flex-wrap items-center justify-between mx-auto px-5">
+        <div className="flex flex-row">
         <Link
           to="/"
-          className="text-2xl md:text-5xl text-white font-semibold italic"
+          className="flex items-center text-2xl md:text-5xl text-white font-semibold italic"
         >
-          LOGO
+          <img src={require('../images/NaviGreeLogo.png')} className="w-24 h-24"/>
+          <h1 className="text-md">NAVIGREE</h1>
         </Link>
+        </div>
         <div className="mobile-menu block md:hidden">
           {!navbarOpen ? (
             <button

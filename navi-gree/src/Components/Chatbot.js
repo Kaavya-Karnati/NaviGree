@@ -1,4 +1,4 @@
-import React, {useState,useRef, useEffect} from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { FaRegMessage } from "react-icons/fa6";
 import { FaHome } from "react-icons/fa";
 import { FaSave } from "react-icons/fa";
@@ -6,20 +6,41 @@ import { SiProcessingfoundation } from "react-icons/si";
 import { IoSend } from "react-icons/io5";
 import { FaUserPen } from "react-icons/fa6";
 import { FaRegUserCircle } from "react-icons/fa";
+import UniversitySelector from "./UniversitySelector";
+import MajorSelector from "./MajorSelector";
 
 const Chatbot = () => {
   const msgEnd = useRef(null);
   const [input, setInput] = useState("");
-  const [messages, setMessages] = useState([{
-    text: 'Hello, I am Navi-Gree Bot. How can I help you with today?',
-    isBot: true,
-  }]);
+  const [messages, setMessages] = useState([
+    {
+      text: "Hello, I am Navi-Gree Bot. How can I help you with today?",
+      isBot: true,
+    },
+  ]);
+  const [university, setUniversity] = useState('');
+  const [major, setMajor] = useState('');
 
   useEffect(() => {
     msgEnd.current.scrollIntoView();
-  },[messages]);
+  }, [messages]);
 
-  const handleSend = async() =>{
+  useEffect(() => {
+    console.log('Selected University:', university);
+  }, [university]);
+
+  useEffect(() => {
+    console.log('Selected Major:', major);
+  }, [major]);
+
+  const handleUniversitySelect = (uni) => {
+    setUniversity(uni);
+  }
+
+  const handleMajorSelect = (maj) => {
+    setMajor(maj);
+  }
+  const handleSend = async () => {
     // const text = input;
     // setInput('');
     // setMessages([
@@ -27,19 +48,19 @@ const Chatbot = () => {
     //  {text, isBot: false}])
     // const res = await sendMsgToOpenAI(text);
     // setMessages([...messages,
-      //    {text, isBot: false},
-      //  {text: res, isBot: true}]);
+    //    {text, isBot: false},
+    //  {text: res, isBot: true}]);
 
     console.log("handlesend clicked");
-  }
+  };
 
-  const handleEnter = async(e) =>{
-    if (e.key == 'Enter'){
+  const handleEnter = async (e) => {
+    if (e.key == "Enter") {
       await handleSend();
     }
-  }
+  };
   return (
-    <div id="chat" className="w-screen bg-slate-200 pt-6">
+    <div id="chat" className="w-screen bg-slate-200 pt-6 z-20 relative">
       <h1 className="text-center text-black text-4xl underline hover:underline-offset-4 cursor-default">
         Get Started with Navi-gree bot!
       </h1>
@@ -54,7 +75,9 @@ const Chatbot = () => {
             regarding course work
           </li>
         </ol>
+        
       </div>
+      
       <div>
         <div className="chatbot flex flex-row mt-4 border-t border-slate-700 bg-black min-h-screen max-h-[160vh] w-full overflow-visible">
           <div className="sidebar border-box flex-3 border-r border-slate-700 ">
@@ -110,14 +133,23 @@ const Chatbot = () => {
                   It is Latin words for writing sample text. What about it?
                 </p>
               </div> */}
-              {messages.map((message, i) =>
-                <div key={i} className={message.isBot ? "chat bot bg-gradient-to-r from-gray-800 to-transparent w-full text-white m-1 px-2 py-3 text-md flex place-items-start justify-start" : "chat text-white m-1 px-2 py-3 text-md flex place-items-start justify-start"}>
-                <FaRegUserCircle className="text-white h-16 w-16 object-cover rounded-md" />{" "}
-                <p className="txt">
-                  {message.text}
-                </p>
+              <div className="flex flex-row pt-3">
+              <UniversitySelector onUniversitySelect={handleUniversitySelect}/>
+              <MajorSelector onMajorSelect={handleMajorSelect}/>
               </div>
-              )}
+              {messages.map((message, i) => (
+                <div
+                  key={i}
+                  className={
+                    message.isBot
+                      ? "chat bot bg-gradient-to-r from-gray-800 to-transparent w-full text-white m-1 px-2 py-3 text-md flex place-items-start justify-start"
+                      : "chat text-white m-1 px-2 py-3 text-md flex place-items-start justify-start"
+                  }
+                >
+                  <FaRegUserCircle className="text-white h-16 w-16 object-cover rounded-md" />{" "}
+                  <p className="txt">{message.text}</p>
+                </div>
+              ))}
               <div ref={msgEnd} />
             </div>
             <div className="chatFooter flex items-center mt-auto justify-center w-full whitespace-nowrap relative">
@@ -127,8 +159,9 @@ const Chatbot = () => {
                 className="flex-1 w-full h-auto p-2 pl-10 pr-12 border border-slate-600 outline-none bg-black text-white flex items-center rounded-md"
                 value={input}
                 onKeyDown={handleEnter}
-                onChange={(e)=>{setInput(e.target.value)}
-                }
+                onChange={(e) => {
+                  setInput(e.target.value);
+                }}
               />
               <button
                 className="absolute right-2 top-1/2 transform -translate-y-1/2"
