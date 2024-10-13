@@ -81,7 +81,7 @@
   font-style: italic;
 }
 .team-info::after{
-  background: #008aff;
+  background: #a64d79;
   background: -webkit-linear-gradient(
     135deg, #6B02FF 0%, #985BEF 100%
     );
@@ -133,11 +133,11 @@ u1.team-icon li a{
   background-color: #fff;
 }
 u1.team-icon li a:hover{
-  background-color: #4766e4;
+  background-color: #a64d79;
   color: white;
 }
 .team-item:hover{
-  background: #3956de;
+  background: #a64d79;
   color: white;
 }
 .team-img img{

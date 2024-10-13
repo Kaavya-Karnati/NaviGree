@@ -4,7 +4,7 @@ import RishiImage from '../images/Rishi.jpeg';
 import KaavyaImage from '../images/Kaavya.jpeg';
 function Team() {
     return (
-        <section className="section-white h-full w-full py-12 bg-gray-100">
+        <section className="section-white h-full w-screen py-12 bg-gray-100">
             <div className="container mx-auto">
                 <div className="text-center mb-10">
                     <h2 className="text-4xl font-bold text-gray-800 mb-4">The Team behind NaviGree</h2>
