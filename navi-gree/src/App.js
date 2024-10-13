@@ -4,6 +4,8 @@ import Home from './Components/Home';
 import NavigationBar from './Components/NavigationBar';
 import About from './Components/About';
 import Chatbot from './Components/Chatbot';
+import Team from './Components/Team';
+import './App.css';
 
 function App() {
   return (
@@ -13,6 +15,7 @@ function App() {
       <Home />
       <About />
       <Chatbot />
+      <Team />
       </div>
       
       {/* <Routes>
