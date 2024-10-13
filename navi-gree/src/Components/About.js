@@ -15,6 +15,7 @@ const About = () => {
             information about different universities and their programs.
           </p>
         </div>
+        
       </div>
     </section>
   );
