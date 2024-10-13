@@ -38,8 +38,8 @@ export default function UniversitySelector({onUniversitySelect}) {
   ];
 
   return (
-    <div className="z-44 w-44 bg-black text-white">
-      <Box sx={{ minWidth: 120}} className="text-white">
+    <div className="z-44 w-44 bg-black text-white mr-5">
+      <Box sx={{ minWidth: 120}} className="text-white border-l border-r border-b border-gray-300">
         <FormControl fullWidth>
           <InputLabel id="demo-simple-select-label" sx={{ color: 'white' }} shrink >
             University Name

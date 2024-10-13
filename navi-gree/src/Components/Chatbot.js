@@ -38,7 +38,8 @@ const Chatbot = () => {
   }
 
   const handleMajorSelect = (maj) => {
-    setMajor(maj);
+    if (maj == "null") setMajor('');
+    else setMajor(maj);
   }
   const handleSend = async () => {
     // const text = input;
@@ -60,7 +61,7 @@ const Chatbot = () => {
     }
   };
   return (
-    <div id="chat" className="w-screen bg-slate-200 pt-6 z-20 relative">
+    <div id="chat" className="w-screen bg-purple-100 pt-6 z-20 relative">
       <h1 className="text-center text-black text-4xl underline hover:underline-offset-4 cursor-default">
         Get Started with Navi-gree bot!
       </h1>
@@ -69,7 +70,6 @@ const Chatbot = () => {
         <ol className="list-decimal list-inside space-y-2">
           <li>Choose your University</li>
           <li>Choose your major</li>
-          <li>Click Submit</li>
           <li>
             Once Navi-gree bot greets you, please give it any questions
             regarding course work
@@ -133,9 +133,9 @@ const Chatbot = () => {
                   It is Latin words for writing sample text. What about it?
                 </p>
               </div> */}
-              <div className="flex flex-row pt-3">
+              <div className="flex flex-row py-3">
               <UniversitySelector onUniversitySelect={handleUniversitySelect}/>
-              <MajorSelector onMajorSelect={handleMajorSelect}/>
+              <MajorSelector selectedUniversity={university} onMajorSelect={handleMajorSelect}/>
               </div>
               {messages.map((message, i) => (
                 <div
