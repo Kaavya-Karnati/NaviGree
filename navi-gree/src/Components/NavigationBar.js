@@ -33,7 +33,7 @@ const NavigationBar = () => {
           to="/"
           className="text-2xl md:text-5xl text-white font-semibold italic"
         >
-          <img />LOGO
+          LOGO
         </Link>
         <div className="mobile-menu block md:hidden">
           {!navbarOpen ? (

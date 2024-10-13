@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState,useRef, useEffect} from "react";
 import { FaRegMessage } from "react-icons/fa6";
 import { FaHome } from "react-icons/fa";
 import { FaSave } from "react-icons/fa";
@@ -8,6 +8,36 @@ import { FaUserPen } from "react-icons/fa6";
 import { FaRegUserCircle } from "react-icons/fa";
 
 const Chatbot = () => {
+  const msgEnd = useRef(null);
+  const [input, setInput] = useState("");
+  const [messages, setMessages] = useState([{
+    text: 'Hello, I am Navi-Gree Bot. How can I help you with today?',
+    isBot: true,
+  }]);
+
+  useEffect(() => {
+    msgEnd.current.scrollIntoView();
+  },[messages]);
+
+  const handleSend = async() =>{
+    // const text = input;
+    // setInput('');
+    // setMessages([
+    //  ...messages,
+    //  {text, isBot: false}])
+    // const res = await sendMsgToOpenAI(text);
+    // setMessages([...messages,
+      //    {text, isBot: false},
+      //  {text: res, isBot: true}]);
+
+    console.log("handlesend clicked");
+  }
+
+  const handleEnter = async(e) =>{
+    if (e.key == 'Enter'){
+      await handleSend();
+    }
+  }
   return (
     <div id="chat" className="w-screen bg-slate-200 pt-6">
       <h1 className="text-center text-black text-4xl underline hover:underline-offset-4 cursor-default">
@@ -70,7 +100,7 @@ const Chatbot = () => {
           </div>
           <div className="main flex-9 grow flex flex-col items-center px-10 py-6">
             <div className="chats overflow-hidden overflow-y-scroll w-full max-w-[120rem] h-[calc(100vh-7rem)]">
-              <div className="chat text-white m-1 px-2 py-3 text-md flex place-items-start justify-start">
+              {/* <div className="chat text-white m-1 px-2 py-3 text-md flex place-items-start justify-start">
                 <FaUserPen className="text-white h-16 w-16 object-cover rounded-md" />{" "}
                 <p className="txt">Lorem Ipsum</p>
               </div>
@@ -79,17 +109,31 @@ const Chatbot = () => {
                 <p className="txt">
                   It is Latin words for writing sample text. What about it?
                 </p>
+              </div> */}
+              {messages.map((message, i) =>
+                <div key={i} className={message.isBot ? "chat bot bg-gradient-to-r from-gray-800 to-transparent w-full text-white m-1 px-2 py-3 text-md flex place-items-start justify-start" : "chat text-white m-1 px-2 py-3 text-md flex place-items-start justify-start"}>
+                <FaRegUserCircle className="text-white h-16 w-16 object-cover rounded-md" />{" "}
+                <p className="txt">
+                  {message.text}
+                </p>
               </div>
+              )}
+              <div ref={msgEnd} />
             </div>
             <div className="chatFooter flex items-center mt-auto justify-center w-full whitespace-nowrap relative">
               <input
                 type="text"
                 placeholder="Ask a question..."
-                className="flex-1 w-full h-auto p-2 pl-10 pr-12 border border-slate-600 outline-none bg-black text-white flex items-center rounded-md" // Add padding to account for the icon
+                className="flex-1 w-full h-auto p-2 pl-10 pr-12 border border-slate-600 outline-none bg-black text-white flex items-center rounded-md"
+                value={input}
+                onKeyDown={handleEnter}
+                onChange={(e)=>{setInput(e.target.value)}
+                }
               />
               <button
                 className="absolute right-2 top-1/2 transform -translate-y-1/2"
                 aria-label="Send"
+                onClick={handleSend}
               >
                 <IoSend className="text-white h-7 w-7 p-1" />
               </button>
