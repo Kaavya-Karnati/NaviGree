@@ -1,4 +1,5 @@
 import React from "react";
+import { TypeAnimation } from "react-type-animation";
 
 const Home = () => {
   const handleScrollToSection = (id) => {
@@ -25,7 +26,21 @@ const Home = () => {
 
           />
           <div className="relative">
-            <h1 className="text-8xl mb-4">NaviGree</h1>
+            <h1 className="text-8xl mb-4 font-bold">
+            <span>
+              <TypeAnimation
+                sequence={[
+                  "Navigree",
+                  2500,
+                  "Your Future, Your Plan!",
+                  2500,
+                ]}
+                wrapper="span"
+                speed={6}
+                repeat={Infinity}
+              />
+            </span>
+            </h1>
             <p className="text-lg">Easy way to access academic plans.</p>
             <button
               className="mt-4 px-4 py-2 bg-gray-800 rounded hover:bg-slate-400 text-white"
