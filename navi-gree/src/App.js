@@ -2,6 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Components/Home';
 import NavigationBar from './Components/NavigationBar';
+import About from './Components/About';
+import Chatbot from './Components/Chatbot';
 
 function App() {
   return (
@@ -9,6 +11,8 @@ function App() {
       <NavigationBar />
       <div class="container">
       <Home />
+      <About />
+      <Chatbot />
       </div>
       
       {/* <Routes>

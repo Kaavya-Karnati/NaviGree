@@ -9,19 +9,19 @@ import { Link } from "react-router-dom";
 const navlinks = [
   {
     title: "Home",
-    path: "#about",
+    path: "#home",
   },
   {
     title: "About",
-    path: "#experience",
+    path: "#about",
   },
   {
     title: "Chat",
-    path: "#projects",
+    path: "#chat",
   },
   {
     title: "Team",
-    path: "#gallery",
+    path: "#team",
   },
 ];
 const NavigationBar = () => {
